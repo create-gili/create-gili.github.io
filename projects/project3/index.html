@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Project</title>
+	<style>
+		html, body { margin: 0; padding: 0; overflow: hidden; background: #000; }
+		canvas { display: block; }
+
+		/* Song-Buttons ohne Rahmen */
+		#switcher {
+			position: fixed;
+			top: 22px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 28px;
+			z-index: 10;
+		}
+		#switcher button {
+			font: 600 12px Arial, sans-serif;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: rgba(160, 190, 210, 0.45);
+			background: none;
+			border: none;
+			padding: 6px 2px;
+			cursor: pointer;
+			transition: color 0.2s;
+		}
+		#switcher button:hover { color: rgba(220, 235, 245, 0.85); }
+		#switcher button.active { color: #fff; }
+
+		/* Zeitleiste */
+		#seek {
+			position: fixed;
+			left: 50%;
+			bottom: 52px;
+			transform: translateX(-50%);
+			width: min(560px, 80vw);
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			z-index: 10;
+			font: 600 12px Arial, sans-serif;
+			letter-spacing: 2px;
+			color: rgba(160, 190, 210, 0.8);
+		}
+		#seek span { width: 34px; text-align: center; font-variant-numeric: tabular-nums; }
+		#seekBar {
+			flex: 1;
+			-webkit-appearance: none;
+			appearance: none;
+			height: 18px;
+			background: transparent;
+			cursor: pointer;
+			margin: 0;
+		}
+		#seekBar:disabled { opacity: 0.35; cursor: default; }
+		#seekBar::-webkit-slider-runnable-track {
+			height: 3px;
+			border-radius: 2px;
+			background: rgba(160, 190, 210, 0.3);
+		}
+		#seekBar::-moz-range-track {
+			height: 3px;
+			border-radius: 2px;
+			background: rgba(160, 190, 210, 0.3);
+		}
+		#seekBar::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			width: 11px;
+			height: 11px;
+			margin-top: -4px;
+			border-radius: 50%;
+			background: #fff;
+			border: none;
+		}
+		#seekBar::-moz-range-thumb {
+			width: 11px;
+			height: 11px;
+			border-radius: 50%;
+			background: #fff;
+			border: none;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js"></script>
+</head>
+<body>
+	<div id="switcher"></div>
+	<div id="seek">
+		<span id="tCur">0:00</span>
+		<input type="range" id="seekBar" min="0" max="1000" value="0" disabled>
+		<span id="tDur">0:00</span>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
+
