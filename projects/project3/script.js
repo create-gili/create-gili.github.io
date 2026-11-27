@@ -5,7 +5,7 @@ const SONGS = [
   {
     label: "Arroyo",
     title: "ARROYO",
-    audio: "media/arroyo.mp3",
+    audio: "media/Arroyo.mp3",
     fontFile: "fonts/Sora-ExtraBold.otf",
     fontName: "Sora",
     sizeFactor: 0.17,
@@ -15,7 +15,7 @@ const SONGS = [
   {
     label: "Caje",
     title: "CAJE",
-    audio: "media/caje.mp3",
+    audio: "media/Caje.mp3",
     fontFile: "fonts/Transcity-DEMO.otf",
     fontName: "Transcity",
     sizeFactor: 0.28,
@@ -25,7 +25,7 @@ const SONGS = [
   {
     label: "Fruitopia",
     title: "UITOPIA",
-    audio: "media/fruitopia.mp3",
+    audio: "media/Fruitopia.mp3",
     fontFile: "fonts/Funkymore.otf",
     fontName: "Funkymore",
     sizeFactor: 0.24,
